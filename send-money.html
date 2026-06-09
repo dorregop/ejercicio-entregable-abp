@@ -11,6 +11,7 @@
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
+    <script defer src="./assets/js/send-money.js"></script>
 </head>
 
 <body>
@@ -32,41 +33,41 @@
             </div>
         </div>
     </nav>
-
-    <header class="pt-5 pb-2">
-        <h1 class="text-center text-primary">Realizar transferencia</h1>
+    <header>
+        <h1 class="text-center mt-5 text-primary">Enviar Dinero</h1>
     </header>
-    <div class="container">
-        <section class="row justify-content-center">
-            <div class="col-12 col-sm-10 col-md-8 col-lg-6">
-                <form>
-                    <p>Buscar destinatario:</p>
-                    <input type="text" class="form-control mb-3"
-                        placeholder="Ingrese el nombre del destinatario">
-                    <button class="btn btn-primary mb-4">Agregar nuevo Contacto</button>
-                    <h3>Contactos:</h3>
-                    <ul id="contactList" class="list-group">
-                        <li class="list-group-item list-group-item-action list-group-item-light">
-                            <div class="contact-info">
-                                <span class="contact-name">John Doe</span>
-                                <p class="contact-details">CBU: 123456789, Alias: john.doe, Banco: ABC Bank</p>
-                            </div>
-                        </li>
-                        <li class="list-group-item list-group-item-action list-group-item-light">
-                            <div class="contact-info">
-                                <span class="contact-name">Jane Smith</span>
-                                <p class="contact-details">CBU: 987654321, Alias: jane.smith, Banco: XYZ Bank</p>
-                            </div>
-                        </li>
-                    </ul>
-                    <div class="mt-3 d-flex flex-column align-items-center">
-                        <input type="submit" value="Enviar dinero" class="btn btn-primary">
-                    </div>
-                </form>
+    <main class="container py-4">
+        <section>
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <p class="fs-3 fw-bold">Balance de la cuenta: $ <span id="balance">60.000</span></p>
+                    <form id="formSendMoney">
+                        <div class="mb-3">
+                            <label for="buscarContacto" class="form-label">Buscar en la agenda de transferencias</label>
+                            <input type="text" class="form-control" name="buscarContacto" id="buscarContacto"
+                                placeholder="Buscar contacto">
+                        </div>
+                        <div class="mb-3">
+                            <button class="btn btn-primary" id="btn-agregar-contacto">Agregar nuevo contacto</button>
+                        </div>
+                        <div class="mb-3">
+                            <h2 class="fs-1">Contactos</h2>
+                            <ul class="list-group" id="listaContactos">
+                            </ul>
+                        </div>
+                        <div class="mb-3">
+                            <label for="monto" class="form-label">Monto a transferir:</label>
+                            <input type="number" class="form-control" min="1"
+                                placeholder="Ingrese el monto a transferir" id="monto" name="monto" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="submit" value="Enviar dinero" class="btn btn-primary">
+                        </div>
+                    </form>
+                </div>
             </div>
         </section>
-    </div>
-
+    </main>
 </body>
 
 </html>
